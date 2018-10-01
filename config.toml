@@ -4,23 +4,29 @@ baseURL = "http://localhost:1313/"
 theme = "hugo-theme-massively"
 googleanalytics = "UA-113904582-3"
 disqusShortname = "hugo-massively"
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
+
+[[menu.main]]
+    name = "Pubs"
+    url = "/layout/"
+    weight = 1
 
 # [params]
   # set below parameter to define a favicon
   # favicon = "favicon.ico"
 
 # Below parameters can be set to override default post settings
-# [params.posts]
-#     foldername = "post"
-#     pagesize = "6"
-#     featuredpost = "true"
+#[params.posts]
+#    foldername = "post"
+#    pagesize = "6"
+#    featuredpost = "true"
+
 
 [languages]
 [languages.en]
   languageName = "English"
-#[languages.es]
-#  languageName = "Español"
-#  title = "Massively - Versión Español"
+  title = "main page"
 #[languages.fr]
 #  languageName = "Français"
 #  title = "Massively - Version Française"

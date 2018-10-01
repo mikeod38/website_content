@@ -22,6 +22,10 @@
   other = "Continue"
 [NAV_CONTACT]
   other = "Contact"
+[RESEARCH_TAB]
+  other = "research interests"
+[PUBS_TAB]
+  other = "publications"
 [PAGINATION_NEXT]
   other = "Next"
 [PAGINATION_PREVIOUS]

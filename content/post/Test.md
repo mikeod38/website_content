@@ -1,10 +1,10 @@
 ---
 title: New test post
 author: Mike O'Donnell
-date: '2018-09-28'
 slug: new-test-post
+weight: 1
 categories: []
 tags: []
 ---
 
-simple markdown post
+This is the top post
