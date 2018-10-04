@@ -5,7 +5,7 @@ date: []
 slug: publications
 categories: []
 tags: []
-weight: 2
+weight: 0
 ---
 
 **Michael P. O’Donnell**, Pin-Hao Chao, Jan E. Kammenga and Piali Sengupta. [Rictor/TORC2 mediates gut-to-brain signaling in the regulation of phenotypic plasticity in *C. elegans*.] (http://journals.plos.org/plosgenetics/article?rev=2&id=10.1371/journal.pgen.1007213) PLOS Genetics, 2018.
