@@ -1,0 +1,69 @@
+---
+name: Michael P.
+surname: O'Donnell
+position: "Postdoctoral Fellow"
+address: "Brandeis University"
+phone: 267-549-6911
+www: mikeod38.github.io
+email: mikeod@brandeis.edu
+twitter: \_MikeOD\_
+github: mikeod38
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::moderncv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+# Research 
+
+ * 
+ * 
+ * 
+
+# Education
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Informal studies", "1889-91", "Flying University", "Warsaw, Poland",
+  "Master of Physics", "1893", "Sorbonne Université", "Paris, France",
+  "Master of Mathematics", "1894", "Sorbonne Université", "Paris, France"
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+# Nobel Prizes
+
+```{r}
+tribble(
+  ~Year, ~Type, ~Desc,
+  1903, "Physics", "Awarded for her work on radioactivity with Pierre Curie and Henri Becquerel",
+  1911, "Chemistry", "Awarded for the discovery of radium and polonium"
+) %>% 
+  brief_entries(
+    glue::glue("Nobel Prize in {Type}"),
+    Year, 
+    Desc
+  )
+```
+
+# Publications
+
+```{r}
+bib <- scholar::get_publications("CxAhYtsAAAAJ") %>%
+  filter(cites > 10) %>%
+  distinct(title, .keep_all = TRUE) %>%
+  transmute(bibtype = "Article", author = as.character(author),
+            title = as.character(title),
+            journaltitle = as.character(journal), year, key = row_number()) %>%
+  RefManageR::as.BibEntry() #%>%
+bib
+  # RefManageR::WriteBib(bib, file = "MOD.bib")
+# 
+# bibliography_entries("curie.bib")
+```
+
