@@ -1,0 +1,222 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com).
+%
+% Adapted to be an Rmarkdown template by Mitchell O'Hara-Wild
+% 8 February 2019
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,]{moderncv}
+
+% moderncv themes
+\moderncvstyle{casual}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+
+\definecolor{color0}{rgb}{0,0,0}% black
+\definecolor{color1}{HTML}{3873B3}% custom
+\definecolor{color2}{rgb}{0.45,0.45,0.45}% dark grey
+
+\usepackage[scaled=0.86]{DejaVuSansMono}
+
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\def\donothing#1{#1}
+\def\emaillink#1{#1}
+
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.75,footskip=52pt]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+
+%%%% BIBLIOGRAPHY
+% Bibliography formatting
+
+\usepackage[sorting=ynt,citestyle=authoryear,bibstyle=authoryear-comp,defernumbers=true,maxnames=20,giveninits=true, bibencoding=utf8, terseinits=true, uniquename=init,dashed=false,doi=false,isbn=false,natbib=true,backend=biber]{biblatex}
+
+\DeclareFieldFormat{url}{\url{#1}}
+\DeclareFieldFormat[article]{pages}{#1}
+\DeclareFieldFormat[inproceedings]{pages}{\lowercase{pp.}#1}
+\DeclareFieldFormat[incollection]{pages}{\lowercase{pp.}#1}
+\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\DeclareFieldFormat[article]{title}{\MakeCapital{#1}}
+\DeclareFieldFormat[article]{url}{}
+\DeclareFieldFormat[inproceedings]{title}{#1}
+\DeclareFieldFormat{shorthandwidth}{#1}
+\DeclareFieldFormat{extradate}{}
+
+% No dot before number of articles
+\usepackage{xpatch}
+\xpatchbibmacro{volume+number+eid}{\setunit*{\adddot}}{}{}{}
+
+% Remove In: for an article.
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{%
+  \printtext{\bibstring{in}\intitlepunct}}}
+
+%\makeatletter
+%\DeclareDelimFormat[cbx@textcite]{nameyeardelim}{\addspace}
+%\makeatother
+
+\setlength{\bibitemsep}{1.8pt}
+\setlength{\bibhang}{.9cm}
+%\renewcommand{\bibfont}{\fontsize{12}{14}}
+
+\renewcommand*{\bibitem}{\addtocounter{papers}{1}\item \mbox{}\hskip-0.9cm\hbox to 0.9cm{\hfill\arabic{papers}.~\,}}
+\defbibenvironment{bibliography}
+{\list{}
+  {\setlength{\leftmargin}{\bibhang}%
+   \setlength{\itemsep}{\bibitemsep}%
+   \setlength{\parsep}{\bibparsep}}}
+{\endlist}
+{\bibitem}
+
+\renewcommand{\bibfont}{\normalfont\fontsize{10}{12.4}\selectfont}
+% Counters for keeping track of papers
+\newcounter{papers}
+
+\DeclareSortingScheme{ty}{
+  \sort{
+    \field{title}
+  }
+  \sort{
+    \field{year}
+  }
+}
+\DeclareBibliographyCategory{bib-MOD.bib-4720237}
+\bibliography{MOD.bib}
+
+% personal data
+\name{Michael P.}{O'Donnell}
+\title{Postdoctoral Fellow}
+\address{Brandeis University}{}{}
+\phone[mobile]{267-549-6911} % Phone number
+\email{\donothing{\href{mailto:mikeod@brandeis.edu}{\nolinkurl{mikeod@brandeis.edu}}}}
+\homepage{mikeod38.github.io} % Personal website
+
+\social[twitter]{\_MikeOD\_}
+\social[github]{mikeod38}
+% \extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+
+
+
+
+% Templates for detailed entries
+% Arguments: what when with where why
+\usepackage{etoolbox}
+\def\detaileditem#1#2#3#4#5{
+	\cventry{#2}{#1}{#3}{#4}{}{{\ifx#5\empty\else{\begin{itemize}#5\end{itemize}}\fi}}}
+\def\detailedsection#1{\nopagebreak#1}
+
+% Templates for brief entries
+% Arguments: what when with
+\def\briefitem#1#2#3{\cvitem{#2}{#1. #3}}
+\def\briefsection#1{\nopagebreak#1}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+
+
+\hypertarget{research}{%
+\section{Research}\label{research}}
+
+\begin{itemize}
+\item
+\item
+\item
+\end{itemize}
+
+\hypertarget{education}{%
+\section{Education}\label{education}}
+
+\detailedsection{\detaileditem{Informal studies}{1889-91}{Flying University}{Warsaw, Poland}{\empty}\detaileditem{Master of Physics}{1893}{Sorbonne Université}{Paris, France}{\empty}\detaileditem{Master of Mathematics}{1894}{Sorbonne Université}{Paris, France}{\empty}}
+
+\hypertarget{nobel-prizes}{%
+\section{Nobel Prizes}\label{nobel-prizes}}
+
+\briefsection{\briefitem{Nobel Prize in Physics}{1903}{Awarded for her work on radioactivity with Pierre Curie and Henri Becquerel}\briefitem{Nobel Prize in Chemistry}{1911}{Awarded for the discovery of radium and polonium}}
+
+\hypertarget{publications}{%
+\section{Publications}\label{publications}}
+
+\begin{verbatim}
+## [1] D. Garbe, M. O'Donnell, and G. Bashaw. "Cytoplasmic domain
+## requirements for Frazzled-mediated attractive axon turning at the
+## Drosophila midline". In: _Development_ (2007).
+## 
+## [2] X. Huang, C. Hong, M. O'Donnell, et al. "The doublesex-related
+## gene, XDmrt4, is required for neurogenesis in the olfactory
+## system". In: _Proceedings of the National Academy of Sciences_
+## (2005).
+## 
+## [3] S. Neal, A. Takeishi, M. O'Donnell, et al. "Feeding
+## state-dependent regulation of developmental plasticity via CaMKI
+## and neuroendocrine signaling". In: _Elife_ (2015).
+## 
+## [4] M. O'Donnell and G. Bashaw. "Src inhibits midline axon
+## crossing independent of Frazzled/Deleted in Colorectal Carcinoma
+## (DCC) receptor tyrosine phosphorylation". In: _Journal of
+## Neuroscience_ (2013).
+## 
+## [5] M. O'Donnell, R. Chance, and G. Bashaw. "Axon growth and
+## guidance: receptor regulation and signal transduction". In:
+## _Annual review of neuroscience_ (2009).
+## 
+## [6] M. O'Donnell, C. Hong, X. Huang, et al. "Functional analysis
+## of Sox8 during neural crest development in Xenopus". In:
+## _Development_ (2006).
+## 
+## [7] M. O’Donnell and G. Bashaw. "Distinct functional domains of
+## the Abelson tyrosine kinase control axon guidance responses to
+## Netrin and Slit to regulate the assembly of neural circuits". In:
+## _Development_ (2013).
+## 
+## [8] J. Wu, M. O'Donnell, A. Gitler, et al. "Kermit 2/XGIPC, an
+## IGF1 receptor interacting protein, is required for IGF signaling
+## in Xenopus eye development". In: _Development_ (2006).
+\end{verbatim}
+
+\defbibheading{bib-MOD.bib-4720237}{}
+\addtocategory{bib-MOD.bib-4720237}{1,
+2,
+3,
+4,
+5,
+6,
+7,
+8}
+\newrefcontext[sorting=none]\setcounter{papers}{0}\pagebreak[3]
+\printbibliography[category=bib-MOD.bib-4720237,heading=none]\setcounter{papers}{0}
+
+\nocite{1,
+2,
+3,
+4,
+5,
+6,
+7,
+8}
+
+
+\end{document}
+
+%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\end{document}
+
+
+%% end of file `template.tex'.
