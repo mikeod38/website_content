@@ -1,0 +1,200 @@
+---
+name: Michael P.
+surname: O'Donnell
+position: "Postdoctoral Fellow, Brandeis University"
+phone: 267-549-6911
+www: mikeod38.github.io
+email: mikeod@brandeis.edu
+twitter: \_MikeOD\_
+github: mikeod38
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::moderncv
+urlcolor: blue
+urlfont: Times
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+\definecolor{color0}{rgb}{0,0,0}
+\definecolor{color1}{rgb}{0,0,0}
+\definecolor{color2}{rgb}{0,0,0}
+\definecolor{color3}{rgb}{0,0,0}
+
+
+# Education
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where, ~misc,
+  "Ph.D. in Cell and Molecular Biology", "2006-2012", "University of Pennsylvania", "Philadelphia, PA", "\\newline \\textbf{Thesis:} Signal transduction mechanisms in commissural axon guidance: The role of intracellular tyrosine kinases in Netrin-DCC/frazzled axon attraction", 
+  "B.S. in Biomedical Engineering", "2002", "Drexel University", "Philadelphia, PA", ""
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where, .protect = FALSE)
+```
+
+# Research Experience
+```{r}
+library(tibble)
+tribble(
+  ~Year, ~Position, ~Whom, ~Department, ~Where, ~desc,
+  "2013 - present", "Post-doctoral research", "\\newline Mentor: Piali Sengupta", "Brandeis University", "Waltham, MA", "Demonstrated that a bacterially-derived neurotransmitter, tyramine, can modulate olfactory responses and co-opt the function of the host tyraminergic/octopaminergic system. ",
+  "2013 - present", "Post-doctoral research", "\\newline Mentor: Piali Sengupta", "Brandeis University", "Waltham, MA", "Studied the role of feeding state in the integration of sensory inputs during development. Identified a role for intestinal mTORC2 in promoting gut-to-brain signaling. ",
+  "2013 - present", "Post-doctoral research", "\\newline Mentor: Piali Sengupta", "Brandeis University", "Waltham, MA", "Established a microfluidics-based system to study the effects of colonizing microbes on sensory-driven behavior in \\textit{C. elegans}. The system allows high-throughput behavioral screening of both bacteria and chemosensory cues. ",
+  
+  "2006 - 2012", "Doctoral research", "\\newline Mentor: Greg Bashaw", "University of Pennsylvania Medical School", "Philadelphia, PA", "Thesis: Signal transduction mechanisms in commissural axon guidance: The role of intracellular tyrosine kinases in Netrin-DCC/frazzled axon attraction",
+  "2006 - 2012", "Doctoral research", "\\newline Mentor: Greg Bashaw", "University of Pennsylvania Medical School", "Philadelphia, PA", "Identified roles of multiple intracellular kinases in driving attractive axon guidance decisions in response to the highly conserved guidance cue, Netrin. These kinases couple the Netrin receptor to regulate multiple cytoskeletal events during axon guidance.",
+  
+  "2004 - 2006", "Research technician", "\\newline Mentor: Peter S. Klein", "University of Pennsylvania Medical School", "Philadelphia, PA", "Investigated the function of an IGF-receptor interacting protein essential for eye development. ",
+  "2004 - 2006", "Research technician", "\\newline Mentor: Peter S. Klein", "University of Pennsylvania Medical School", "Philadelphia, PA", "Studied the role glycogen synthase kinase (GSK3) in regulating the behavioral effects of lithium. ",
+  
+  "2002 - 2004", "Research technician", "\\newline Mentor: Jean-Pierre Saint-Jeannet", "University of Pennsylvania School of Veterinary Medicine", "Philadelphia, PA", "Identified a feed-forward transcriptional system involving SoxE factors that is essential for long range neural crest cell migration in \\textit{Xenopus}. ",  
+  "2002 - 2004", "Research technician", "\\newline Mentor: Jean-Pierre Saint-Jeannet", "University of Pennsylvania School of Veterinary Medicine", "Philadelphia, PA", "Investigated the function of a DMRT-family transcription factor in olfactory neuron specification."
+  
+) %>% detailed_entries(Position, Year, Department, Whom, desc, .protect = FALSE) 
+```
+
+\newpage
+# Publications
+```{r}
+# too much work for formatting - use bibtex output from Zotero instead
+bib <- scholar::get_publications("CxAhYtsAAAAJ") %>%
+  filter(cites > 0) %>%
+  tidyr::separate(number, into = c('volume', 'pp'), sep = ", ") %>%
+  distinct(title, .keep_all = TRUE) %>%
+  transmute(bibtype = "Article", author = as.character(author),
+            title = as.character(title),
+            journaltitle = as.character(journal),
+            year,
+            volume = as.character(volume),
+            key = row_number()) %>%
+RefManageR::as.BibEntry() #%>%
+# 
+#    RefManageR::WriteBib(bib, file = "MOD.bib")
+# 
+# bibliography_entries("MOD.bib")
+```
+
+\textbf{Manuscripts}
+```{r preprints}
+bibliography_entries("My_Manuscripts.bib")
+```
+
+\textbf{Peer-reviewed primary research}
+```{r publications}
+bibliography_entries("My_PeerReviewedPapers.bib")
+```
+
+\textbf{Reviews and commentaries}
+```{r reviews}
+bibliography_entries("My_Reviews.bib")
+```
+
+
+\textbf{My Bibliography}
+\href{https://www.ncbi.nlm.nih.gov/myncbi/1J16Yp6Zdle5w/bibliography/public/}{https://www.ncbi.nlm.nih.gov/myncbi/1J16Yp6Zdle5w/bibliography/public/}
+
+
+# Awards
+```{r}
+tribble(
+  ~Name, ~ID, ~dates,
+"AJ Drexel Scholarship","","1997-2002",
+"Training program in Cell and Molecular Biology", "NIH T32-GM07229", "2007-2009",
+"Training program in Developmental Biology", "NIH T32-HD007516", "2009–2012",
+"Training program in Quantitative Neuroscience", "NIH T32-NS-007292", "2013",
+"Ruth L. Kirschstein (NRSA) - \\textit{Genetic and Neural Basis of Pheromone Sensory Integration in Nematodes}", "NIH F32 DC013711", "2014-2015",
+"\\hspace{.5cm}Susan Lindquist Fund award", "","2019") %>%
+  brief_entries(Name, dates, ID, .protect = FALSE)
+```
+
+# Seminars
+```{r}
+tibble::tribble(
+  ~Year, ~Type, ~Where, ~Title,
+  2015, "Invited seminar", "International Worm Meeting Quantitative Genetics Workshop, UCLA", "Natural variation in a TOR-complex 2 component underlies a temperature-dependent polyphenic trait",
+  2017, "Platform presentation", "International Worm Meeting Pathogen parallel session, UCLA", "Intestinal colonization by bacteria alters chemosensory responses to alcohols",
+  2017, "Seminar", "Sommer laboratory, Max Planck Institute, Tubingen, Germany", "TORC2 signaling and gut colonization regulates neuronal state",
+  2017, "Seminar", "Boston Area Worm Meeting (BAWM), MIT", "Intestinal mTORC2 and gut colonization regulates internal state",
+  2018, "Seminar", "Gordon Research Conference on Modulation of Neural Circuits and Behavior, Sunday River, ME", "Modulation of phenotypic plasticity by gut-brain signaling",
+  2018, "Platform presentation", "\\textit{C. elegans} Neuro meeting, UW Madison", "Modulation of aversive chemical responses by tyramine-producing bacteria",
+  2019, "Invited seminar", "Volen Center for complex systems retreat", "Modulation of aversive chemical responses by tyramine-producing bacteria"
+) %>%
+  detailed_entries(Where,Year,Title,Type, .protect = FALSE)
+```
+
+# Poster Presentations
+```{r}
+tribble(
+  ~Year, ~Where, ~Title,
+  2014, "Society for Molecular Biology and Evolution (SMBE) international meeting, San Juan, PR.", "Opposing peptide signals shape a polyphenic trait in \\textit{C. elegans}",
+  2015, "International Worm Meeting, UCLA", "Rictor limits temperature-dependent dauer formation by controlling intestine-neuron signaling",
+  2018, "Gordon Research Conference on Modulation of Neural Circuits and Behavior, Sunday River ME", "Intestinal colonization by bacteria alters chemosensory avoidance of alcohols"
+) %>%
+  detailed_entries(Where,Year,Title, .protect = FALSE)
+```
+
+
+\newpage
+# Teaching
+
+```{r teaching}
+tibble::tribble(
+  ~Year, ~Role, ~Course, ~Details,
+  2007, "Tutor", "Cell Biology", "Weekly tutoring sessions with 5 first-year graduate students",
+  2009, "TA", "Gene expression", "Led a weekly discussion section, contributed to exam writing and grading",
+  2014, "Guest Lecturer", "Molecular Genetics", "Lectures on \\textit{C elegans} genetics and natural variation, QTL analysis",
+  2014, "Guest Lecturer", "Neurogenetics", "Lectures on evolution of chemosensory receptors",
+  2016, "Guest Lecturer", "Molecular Genetics", "Lectures on \\textit{C elegans} genetics and natural variation, QTL analysis",
+  2018, "Guest Lecturer", "Neurogenetics", "Lectures on evolution of chemosensory receptors"
+) %>% detailed_entries(Details, Year, Course, Role, .protect = FALSE)
+
+```
+
+
+# Outreach
+
+```{r}
+tribble(
+  ~Year, ~Name, ~desc,
+"2017, 2018", "Meet the Scientists program at the Discovery Museum, Acton MA", "All ages demonstration",
+2017, "Brandeis Scientist Big Sibling Summer program via the MRSEC REU program", "Mentoring non-Brandeis undergraduates",
+2018, "Brandeis Scientists in the classroom workshop", "",
+2019, "Brandeis Scientists in the classroom, Morgan King and Nathan Johnson's 7th grade science classes. \\url{https://doi.org/10.6084/m9.figshare.9693464}", "McDevitt Middle School, Waltham") %>%
+  brief_entries(Name,Year,desc , .protect = FALSE)
+
+```
+
+# Mentoring
+
+```{r}
+tribble(
+  ~Type, ~names, ~location,
+  "Sengupta lab doctoral students", "Anna Hartmann, Ph.D., Travis Rogers, Munzareen Khan", "Brandeis University",
+  "Sengupta lab rotation students", "Anna Hartmann, Ph.D., Michael Hobin, Daniel Powell, Isa Gell-Levey, Justin Shin", "Brandeis University",
+  "Sengupta lab undergaduates", "Jason Teng", "Brandeis University",
+  "REU mentees", "David Barnes", "Hampton University",
+  "Bashaw lab rotation students", "Celine Santiago, Ph.D., Michael Fleming, Ph.D., Joe Zinksi, Ph.D.", "University of Pennsylvania"
+) %>%
+  detailed_entries(names,location,Type)
+```
+
+\section{References}
+
+```{r}
+tribble(
+  ~Name, ~Title, ~location, ~spacer,
+  "Piali Sengupta", "Professor and Chair of Biology, \\newline Brandeis University", "Shapiro Science Center 2-08A \\newline 415 South St. Waltham, MA 02454  \\newline (781)-736-2686 \\newline \\href{mailto:sengupta@brandeis.edu}{ sengupta@brandeis.edu}", "",
+  
+  "Greg J. Bashaw", "Professor of Neuroscience, University of Pennsylvania", "135A Clinical Research Building \\newline 415 Curie Boulevard Philadelphia, PA 19104 \\newline (215)-898-0829 \\newline \\href{mailto:gbashaw@pennmedicine.upenn.edu}{gbashaw@pennmedicine.upenn.edu}", "",
+  
+   "Yun Zhang", "Professor of Organismic and Evolutionary Biology, \\newline Harvard University", "Center for Brain Science \\newline 52 Oxford Street Cambridge, MA 02138 \\newline (617)-495-1107 \\newline \\href{mailto:yzhang@oeb.harvard.edu}{yzhang@oeb.harvard.edu}", "",
+  
+  "Frank C. Schroeder", "Professor of Chemistry and Chemical Biology, \\newline Cornell University", "Boyce Thompson Institute \\newline 533 Tower Rd Ithaca, NY 14853 \\newline (607)-254-4391 \\newline \\href{mailto:schroeder@cornell.edu}{schroeder@cornell.edu}", ""
+
+) %>% detailed_entries(Name, spacer, Title, location, .protect = FALSE)
+```
+

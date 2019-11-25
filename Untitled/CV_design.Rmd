@@ -36,9 +36,9 @@ tribble(
 library(tibble)
 tribble(
   ~Year, ~Position, ~Whom, ~Department, ~Where, ~desc,
-  "2013 - present", "Post-doctoral research", "Mentor: Piali Sengupta", "Brandeis University", "Waltham, MA", "Established a microfluidics-based system to study the effects of colonizing microbes on sensory-driven behavior in \\textit{C. elegans}. The system allows \\textbf{high-throughput behavioral screening of both bacteria and chemosensory cues.} ",
   "2013 - present", "Post-doctoral research", "Mentor: Piali Sengupta", "Brandeis University", "Waltham, MA", "Demonstrated that a bacterially-derived neurotransmitter, tyramine, can modulate olfactory responses and co-opt the function of the host tyraminergic/octopaminergic system. ",
   "2013 - present", "Post-doctoral research", "Mentor: Piali Sengupta", "Brandeis University", "Waltham, MA", "Studied the role of feeding state in the integration of sensory inputs during development. Identified a role for intestinal mTORC2 in promoting gut-to-brain signaling. ",
+  "2013 - present", "Post-doctoral research", "Mentor: Piali Sengupta", "Brandeis University", "Waltham, MA", "Established a microfluidics-based system to study the effects of colonizing microbes on sensory-driven behavior in \\textit{C. elegans}. The system allows \\textbf{high-throughput behavioral screening of both bacteria and chemosensory cues.} ",
   
   "2006 - 2012", "Doctoral research", "Mentor: Greg Bashaw", "University of Pennsylvania Medical School", "Philadelphia, PA", "Identified roles of multiple intracellular kinases in driving attractive axon guidance decisions in response to the highly conserved guidance cue, Netrin. These kinases couple the Netrin receptor to regulate multiple cytoskeletal events during axon guidance.",
   
@@ -48,9 +48,8 @@ tribble(
   "2002 - 2004", "Pre-doctoral research", "Mentor: Jean-Pierre Saint-Jeannet", "University of Pennsylvania School of Veterinary Medicine", "Philadelphia, PA", "Identified a feed-forward transcriptional system involving SoxE factors that is essential for long range neural crest cell migration in \\textit{Xenopus}. ",  
   "2002 - 2004", "Pre-doctoral research", "Mentor: Jean-Pierre Saint-Jeannet", "University of Pennsylvania School of Veterinary Medicine", "Philadelphia, PA", "Investigated the function of a DMRT-family transcription factor in olfactory neuron specification."
   
-) %>% detailed_entries(Position, Year, Department, Whom, desc, .protect = FALSE)
+) %>% detailed_entries(Position, Year, Department, Whom, desc, .protect = FALSE) 
 ```
-
 
 # Publications
 ```{r}
@@ -82,7 +81,6 @@ bibliography_entries("My_Manuscripts.bib")
 ```{r publications}
 bibliography_entries("My_PeerReviewedPapers.bib")
 ```
-
 
 ## Reviews and Commentaries
 
@@ -186,7 +184,10 @@ tribble(
   
   "Greg J. Bashaw", "Professor of Neuroscience, University of Pennsylvania", "135A Clinical Research Building \\newline 415 Curie Boulevard Philadelphia, PA 19104 \\newline (215)-898-0829 ", "\\href{mailto:gbashaw@pennmedicine.upenn.edu}{gbashaw@pennmedicine.upenn.edu}",
   
-  "Yun Zhang", "Professor of Organismic and Evolutionary Biology, \\newline Harvard University", "Center for Brain Science \\newline 52 Oxford Street Cambridge, MA 02138 \\newline (617)-495-1107 ", "\\href{mailto:yzhang@oeb.harvard.edu}{yzhang@oeb.harvard.edu}"
+   "Yun Zhang", "Professor of Organismic and Evolutionary Biology, \\newline Harvard University", "Center for Brain Science \\newline 52 Oxford Street Cambridge, MA 02138 \\newline (617)-495-1107 ", "\\href{mailto:yzhang@oeb.harvard.edu}{yzhang@oeb.harvard.edu}",
+  
+  "Frank C. Schroeder", "Professor of Chemistry and Chemical Biology, \\newline Cornell University", "Boyce Thompson Institute \\newline 533 Tower Rd Ithaca, NY 14853 \\newline (607)-254-4391 ", "\\href{mailto:schroeder@cornell.edu}{schroeder@cornell.edu}"
+
 ) %>% detailed_entries(location, contactinfo, Name, Title, .protect = FALSE)
 ```
 

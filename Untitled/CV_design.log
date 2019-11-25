@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.8.15)  20 AUG 2019 15:48
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.8.22)  14 SEP 2019 19:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -350,7 +350,7 @@ TeX
 e.sty
 Package: l3keys2e 2019-05-28 LaTeX2e option processing using LaTeX3 keys
 ) (/Users/mikeod/Library/TinyTeX/texmf-dist/tex/latex/filehook/filehook.sty
-Package: filehook 2011/10/12 v0.5d Hooks for input files
+Package: filehook 2019/08/19 v0.5e Hooks for input files
 ) (/Users/mikeod/Library/TinyTeX/texmf-dist/tex/latex/base/fix-cm.sty
 Package: fix-cm 2015/01/14 v1.1t fixes to LaTeX
 (/Users/mikeod/Library/TinyTeX/texmf-dist/tex/latex/base/ts1enc.def
@@ -1250,7 +1250,7 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'CV_design.bbl' found.
 (./CV_design.bbl
 LaTeX Font Info:    Font shape `TU/SourceSansPro(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 86.
+(Font)              scaled to size 10.0pt on input line 82.
 )
 Package biblatex Info: Reference section=0 on input line 157.
 Package biblatex Info: Reference segment=0 on input line 157.
@@ -1377,12 +1377,12 @@ Package logreq Info: Writing requests to 'CV_design.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47448 strings out of 494894
- 940342 string characters out of 6173843
- 1494012 words of memory out of 5000000
- 50767 multiletter control sequences out of 15000+600000
+ 47451 strings out of 494894
+ 940406 string characters out of 6173843
+ 1494036 words of memory out of 5000000
+ 50770 multiletter control sequences out of 15000+600000
  538325 words of font info for 131 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,11n,109p,1879b,5030s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 72i,11n,109p,1879b,5022s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on CV_design.pdf (4 pages).
