@@ -8,6 +8,10 @@ tags: []
 weight: 0
 ---
 
+**Michael P. O'Donnell**, Bennett W. Fox, Pin-Hao Chao, Frank C. Schroeder and Piali Sengupta. [Modulation of sensory behavior and food choice by an enteric bacteria-produced neurotransmitter] (https://www.biorxiv.org/content/10.1101/735845v1) bioRxiv, 2019. In revision. 
+
+**Michael P. O'Donnell**, Munzareen Khan and Piali Sengupta. [Thermosensation: Human Parasitic Nematodes Use Heat to Hunt Hosts] (https://www.cell.com/current-biology/fulltext/S0960-9822(18)30750-4) Current Biology, 2018.
+
 **Michael P. O’Donnell**, Pin-Hao Chao, Jan E. Kammenga and Piali Sengupta. [Rictor/TORC2 mediates gut-to-brain signaling in the regulation of phenotypic plasticity in *C. elegans*.] (http://journals.plos.org/plosgenetics/article?rev=2&id=10.1371/journal.pgen.1007213) PLOS Genetics, 2018.
 
 Scott J Neal, Asuka Takeishi, **Michael P. O'Donnell**, JiSoo Park, Myeongjin Hong, Rebecca A Butcher, Kyuhyung Kim and Piali Sengupta. [Feeding state-dependent regulation of developmental plasticity via CaMKI and neuroendocrine signaling.] (https://elifesciences.org/articles/10110) Elife, 2015. 
@@ -28,4 +32,4 @@ Xiao Huang, Chang-Soo Hong, **Michael P. O'Donnell** and Jean-Pierre Saint-Jeann
 
 [Google Scholar] (https://scholar.google.com/citations?user=CxAhYtsAAAAJ&hl=en)
 
-[My Bibliography] (https://www.ncbi.nlm.nih.gov/sites/myncbi/1J16Yp6Zdle5w/bibliography/44397772/public/?sort=date&direction=ascending)
+[My Bibliography] (https://www.ncbi.nlm.nih.gov/myncbi/1J16Yp6Zdle5w/bibliography/public/?sort=date&direction=ascending)
