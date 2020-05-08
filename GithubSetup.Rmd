@@ -1,0 +1,14 @@
+---
+title: "HowTo"
+author: "Mike O'Donnell"
+date: "08/05/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+ This is a reminder of how to setup the website via github. Basically you need to have one repo for the version control for the code - in this case 'website-content' and another for the public/ folder that will host the deployed site info. That means having a .gitignore which contains public/. You can then commit files to 'website-content' while ignoring all of the content in public/. The public folder is created by blogdown and Hugo when you run `r eval=FALSE blogdown::serve_site()`
+
+To knit this Rmd file, change `options(blogdown.allow_knit = TRUE)`, then change back to keep blogdown running correctly
