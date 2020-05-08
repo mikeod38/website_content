@@ -26,6 +26,8 @@
   other = "research interests"
 [PUBS_TAB]
   other = "publications"
+[CV_TAB]
+  other = "CV"
 [PAGINATION_NEXT]
   other = "Next"
 [PAGINATION_PREVIOUS]

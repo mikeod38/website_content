@@ -7,6 +7,7 @@
         <li><a href='{{ "#footer" | relLangURL }}'>{{ i18n "NAV_CONTACT" . }}</a></li>
         <li><a href='{{ "/post/publications" | relLangURL }}'>{{ i18n "PUBS_TAB" . }}</a></li>
         <li><a href='{{ "/post/research" | relLangURL }}'>{{ i18n "RESEARCH_TAB" . }}</a></li>
+        <li><a href='{{ "/post/CV" | relLangURL }}'>{{ i18n "CV_TAB" . }}</a></li>
         {{ end }}
         {{ if .IsTranslated }}
         {{ range .AllTranslations }}
